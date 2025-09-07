@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="Мурклуб - популярный молодежный чат с персонажами. Всегда толпа народу, крутые прикиды у персов, стильно, модно, молодёжно! Подсаживайтесь, очень рекомендую!"/>
+<meta name="keywords" content="чат chat общение знакомства мур клуб клаб мурклуб мур-клуб murclub.ru"/>
+<meta name="title" content="Мурклуб - крутой молодежный чат с персонажами"/>
+<meta name="mrc__share_title" content="Мурклуб - крутой молодежный чат с персонажами"/>
+<meta name="mrc__share_description" content="Мурклуб - популярный молодежный чат с персонажами. Всегда толпа народу, крутые прикиды у персов, стильно, модно, молодёжно! Подсаживайтесь, очень рекомендую!"/>
+<title>Профиль пользователя</title>
+<link rel="canonical" href="http://murclub.ru" />
+<link href="css/design_8270.css" rel="stylesheet" type="text/css">
+<link href="css/ru_RU/lang_8268.css" rel="stylesheet" type="text/css">
+<link href="css/new_css_7936.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.notify_6836.css" rel="stylesheet" type="text/css">
+<link href="css/feature-carousel_7971.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+/* Profile page specific styles */
+* {
+    font-family: tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FFF;
+    text-align: center;
+    min-width: 800px;
+    line-height: 1.5;
+    background-image: url('/images/topblue.gif');
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+#pageLayout {
+    background-color: #FFF;
+    width: 800px;
+    text-align: left;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#header {
+    background-color: #FFCB32;
+    background-image: linear-gradient(to bottom, #FFD700, #FFCB32);
+    clear: both;
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+    padding-left: 20px;
+}
+
+#header .logo-img {
+    height: 60px;
+    width: auto;
+    display: inline-block;
+}
+
+#fullpage {
+    width: 800px;
+    float: left;
+    display: flex;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 20px 10px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar li {
+    margin-bottom: 8px;
+}
+
+/* Add indent only for first 7 items (before separator) */
+#sidebar li:nth-child(-n+7) {
+    margin-left: 15px;
+}
+
+#sidebar a {
+    color: #0099FF;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    font-size: 11px;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Add separator line after "Служба поддержки" */
+#sidebar li:nth-child(7)::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 10px 0;
+    margin-left: -15px; /* Compensate for the indent */
+}
+
+/* Style for menu icons */
+.menu-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+#nav {
+    display: block;
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: #333;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+#nav .club-link {
+    color: #09F;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#nav .club-link:hover {
+    text-decoration: underline;
+}
+
+#nav .username {
+    color: #000;
+}
+
+#nav .room-info {
+    color: #666;
+    font-weight: normal;
+}
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.chat-status {
+    color: #FFCB32;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-main {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.photo-gallery {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.photo-thumb {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-btn {
+    background: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/btn-TN4U9Cnq1oXugirTLoX92n50Ycyzxc.gif') repeat-x bottom #FFF;
+    border: 1px solid #09F;
+    color: #09F;
+    padding: 10px 30px;
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: tahoma, verdana, arial, sans-serif;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    height: 14px;
+    line-height: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-btn:hover {
+    border-color: #333;
+}
+
+.gift-coins-section {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gift-coins-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.gift-coins-link {
+    color: #09F;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.gift-coins-link:hover {
+    text-decoration: underline;
+}
+
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-info {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 10px 20px;
+    font-size: 11px;
+}
+
+.about-label {
+    color: #999;
+    text-align: right;
+}
+
+.about-value {
+    color: #333;
+}
+
+.rooms-section {
+    margin-top: 30px;
+}
+
+.rooms-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.clear {
+    clear: both;
+}
+</style>
+<script type="text/javascript">
+// Функция для получения имени пользователя
+function getUserName() {
+    return localStorage.getItem('username') || 'Имя пользователя';
+}
+
+// Функция для получения текущей комнаты
+function getCurrentRoom() {
+    return localStorage.getItem('currentRoom') || null;
+}
+
+// Функция для перехода в главный чат
+function goToMainChat() {
+    window.location.href = '/';
+}
+
+// Функция для обновления навигации
+function updateNavigation() {
+    var username = getUserName();
+    var currentRoom = getCurrentRoom();
+    var navElement = document.getElementById('nav');
+    
+    var navText = '<a href="#" class="club-link" onclick="goToMainChat(); return false;">Клуб</a> \\ <span class="username">' + username + '</span>';
+    
+    if (currentRoom) {
+        navText += ' <span class="room-info">(сейчас в комнате #' + currentRoom + ')</span>';
+    }
+    
+    navElement.innerHTML = navText;
+}
+
+// Функция для подарка монет
+function giftCoins() {
+    alert('Функция подарка монет');
+}
+
+// Обновляем навигацию при загрузке страницы
+window.onload = function() {
+    updateNavigation();
+};
+</script>
+</head>
+<body>
+    <div id="pageLayout">
+        <div id="header">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo2_short-84XmqIlDoYBQKzzuyLZmA5wPbnoQeD.png" alt="МурК" class="logo-img">
+        </div>
+        
+        <div id="fullpage">
+            <div id="sidebar">
+                <ul>
+                    <li><a href="#">Моя страничка</a></li>
+                    <li><a href="#">Вопросы</a></li>
+                    <li><a href="#">Найти друзей</a></li>
+                    <li><a href="#">Что нового?</a></li>
+                    <li><a href="#">Мне интересны</a></li>
+                    <li><a href="#">Мной интересуются</a></li>
+                    <li><a href="#">Служба поддержки</a></li>
+                    <li><a href="#"><img src="/images/plus1.gif" alt="Plus" class="menu-icon">Подписаться</a></li>
+                    <li><a href="#"><img src="/images/lett.gif" alt="Lett" class="menu-icon">Написать в приват</a></li>
+                    <li><a href="#"><img src="/images/bad.gif" alt="Bad" class="menu-icon">Пожаловаться</a></li>
+                </ul>
+            </div>
+            
+            <div id="main-content">
+                <div id="nav">
+                    <a href="#" class="club-link" onclick="goToMainChat(); return false;">Клуб</a> \ <span class="username">Имя пользователя</span>
+                </div>
+                
+                <div class="profile-header">
+                    <div class="profile-title">Имя пользователя <span class="chat-status">в чате</span></div>
+                </div>
+                
+                <div class="profile-main">
+                    <div>
+                        <img src="/placeholder.svg?height=150&width=150" alt="Profile Avatar" class="profile-avatar">
+                        
+                        <div class="gift-coins-section">
+                            <img src="/images/plus.gif" alt="Plus" class="gift-coins-icon">
+                            <a href="#" class="gift-coins-link" onclick="giftCoins(); return false;">Подарить монеты</a>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="photo-gallery">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Photo 1" class="photo-thumb">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Photo 2" class="photo-thumb">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Photo 3" class="photo-thumb">
+                            <img src="/placeholder.svg?height=60&width=60" alt="Photo 4" class="photo-thumb">
+                        </div>
+                        
+                        <div class="profile-buttons">
+                            <a href="#" class="profile-btn">Вопросы</a>
+                            <a href="#" class="profile-btn">Фотоальбомы</a>
+                            <a href="#" class="profile-btn">Рейтинг</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <div class="about-title">О себе</div>
+                    <div class="about-info">
+                        <div class="about-label">ИМЯ:</div>
+                        <div class="about-value">Имя пользователя</div>
+                        
+                        <div class="about-label">День рождения:</div>
+                        <div class="about-value">1 января 1995</div>
+                        
+                        <div class="about-label">Семейное положение:</div>
+                        <div class="about-value">Нет пары</div>
+                        
+                        <div class="about-label">Город:</div>
+                        <div class="about-value">Баку</div>
+                    </div>
+                </div>
+                
+                <div class="rooms-section">
+                    <div class="rooms-title">Любимые комнаты</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
